@@ -131,7 +131,7 @@
 			*/
 			//$client->replyMessage($alt);
 		}
-		else if (strstr($text, '#event')) {
+		else if (strstr($pesan_datang=='#event')) {
                     if ($event->isRoomEvent()) {
                         $msg = "RoomId:" . $event->getRoomId();
                     } else if ($event->isUserEvent()) {
@@ -141,6 +141,7 @@
                     }
                     $bot->replyText($reply_token, $msg);
                 } 
+		
 		else
 		if($pesan_datang=='3')
 		{
