@@ -131,6 +131,16 @@
 			*/
 			//$client->replyMessage($alt);
 		}
+		else if (strstr($text, '#event')) {
+                    if ($event->isRoomEvent()) {
+                        $msg = "RoomId:" . $event->getRoomId();
+                    } else if ($event->isUserEvent()) {
+                        $msg = "UserId:" . $event->getUserId();
+                    } else if ($event->isGroupEvent()) {
+                        $msg = "GroupId:" . $event->getGroupId();
+                    }
+                    $bot->replyText($reply_token, $msg);
+                } 
 		else
 		if($pesan_datang=='3')
 		{
